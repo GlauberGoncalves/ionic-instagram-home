@@ -1,14 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/icon/logo.png" alt="">
+    </ion-buttons>
+
+    <ion-button slot="end" fill="clean">
+      <ion-icon slot="icon-only" name="send"></ion-icon>
+    </ion-button>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+
+  <!-- Stories -->
+  <div class="stories">
+    <div class="story">
+      <div class="add_story">
+        <img src="assets/usuarios/1.jpg">
+        <ion-icon color="primary" name="add-circle"></ion-icon>
+      </div>
+      <p style="color: #86888f;">glaubersk</p>
+    </div>
+
+    <div *ngFor="let usuario of stories">
+      <div class="story">
+        <div class="img-box">
+          <img src="{{ usuario.img }}">
+        </div>
+        <p>{{ usuario.nome }}</p>
+      </div>
+    </div>    
   </div>
+  <hr>
 </ion-content>
